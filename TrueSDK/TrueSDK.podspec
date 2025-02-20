@@ -1,9 +1,7 @@
-# Use the --use-libraries switch when pushing or linting this podspec
-
 Pod::Spec.new do |s|
 
   s.name         = "TrueSDK"
-  s.version      = "0.1.8"
+  s.version      = "0.1.4"
   s.summary      = "Official Truecaller SDK for iOS for one tap verified phone number based sign up/login."
 
   s.description  = <<-DESC
@@ -12,7 +10,7 @@ Pod::Spec.new do |s|
                   * Truecaller autofill to easily fill form data.
                    DESC
 
-  s.homepage     = "https://developer.truecaller.com/implement"
+  s.homepage     = "https://developer.truecaller.com"
   s.license      = { :type => "Apache License, Version 2.0", :file => "LICENSE" }
   s.author             = { "Truecaller" => "truecallerdevelopers@truecaller.com" }
   s.social_media_url   = "http://twitter.com/Truecaller"
@@ -26,6 +24,10 @@ Pod::Spec.new do |s|
 
   s.source_files  = "TrueSDK/*.{h,m}", "TrueSDK/**/*.{h,m}"
   s.public_header_files = "TrueSDK/*.{h}", "TrueSDK/**/*.{h}"
-  s.resource_bundles = { "TrueSDK" => [ "TrueSDK/**/Assets.xcassets" , "TrueSDK/**/Languages"] }
+
+  s.resources = [ "TrueSDK/**/Assets.xcassets"]
+
+  #TODO: Move to resource bundles
+  s.resource_bundles = { "TrueSDK" => [ "TrueSDK/External/Languages/*" ] }
 
 end
